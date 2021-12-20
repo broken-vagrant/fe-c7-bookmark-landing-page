@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 @layer components {
+  .none {
+    display: none;
+  }
+}
+@layer utilities {
   .hero {
+    position: relative;
   }
   .hero::after {
     content: "";
@@ -11,5 +17,34 @@
     background: url("/images/illustration-hero.svg") no-repeat;
     background-position: center;
     right: 0;
+  }
+  .bg__hero-img {
+    position: relative;
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 1536px) {
+    .bg__hero-img {
+      font-size: 0.89rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .bg__hero-img {
+      font-size: 0.8rem;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    .bg__hero-img {
+      font-size: 0.6rem;
+    }
+  }
+  .bg__hero-img::before {
+    content: "";
+    position: absolute;
+    background-color: hsl(231, 69%, 60%);
+    width: 28em;
+    height: 16.5em;
+    right: -7px;
+    border-radius: 8.4em 0 0 8.4em;
+    bottom: 0;
   }
 }
