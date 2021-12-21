@@ -8,16 +8,6 @@
   }
 }
 @layer utilities {
-  .hero {
-    position: relative;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    background: url("/images/illustration-hero.svg") no-repeat;
-    background-position: center;
-    right: 0;
-  }
   .bg__hero-img {
     position: relative;
     font-size: 1rem;
@@ -46,5 +36,14 @@
     right: -7px;
     border-radius: 8.4em 0 0 8.4em;
     bottom: 0;
+  }
+  .tablist-item-wrapper {
+    @apply w-full text-center border-b-gray-400 border-solid border-b-[1px] xl:w-auto xl:border-b-0;
+  }
+  .tablist-item {
+    @apply relative p-4 px-6  after:content-[''] after:absolute after:inset-0 after:border-b-transparent after:border-b-4 after:border-solid hover:text-soft-red;
+  }
+  .tablist-item.active {
+    @apply text-very-dark-blue after:border-b-soft-red;
   }
 }

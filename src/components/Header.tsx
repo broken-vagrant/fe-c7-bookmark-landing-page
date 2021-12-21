@@ -15,7 +15,7 @@ const Header = () => {
             <div className="nav__list-wrapper md:flex none">
               <ul className="nav__list flex items-center gap-8 mr-8">
                 {
-                  links.map((link) => <li><a className="uppercase text-very-dark-blue hover:text-soft-red cursor-pointer">{link}</a>
+                  links.map((link, i) => <li key={i}><a className="uppercase text-very-dark-blue hover:text-soft-red cursor-pointer">{link}</a>
                   </li>)}
               </ul>
               <Button themeColor="soft-red">LOGIN</Button>
