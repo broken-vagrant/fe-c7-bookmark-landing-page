@@ -133,7 +133,7 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       {...other}
       className={`${className || ''} ${classes?.root || ''}`}
     >
-      <div role="tablist" aria-label={ariaLabel || 'provide tablist label'} aria-labelledby={ariaLabelledBy} className={`border-b-gray-300 border-solid border-b-[1px] max-w-[890px] mx-auto flex items-center justify-between text-lg text-grayish-blue flex-col xl:flex-row px-4 lg:px-0 ${classes?.tabList || ''}`} ref={tablistRef} onKeyDown={handleKeyDown}>
+      <div role="tablist" aria-label={ariaLabel || 'provide tablist label'} aria-labelledby={ariaLabelledBy} className={`border-b-gray-300 border-solid border-b-0 xl:border-b-[1px] max-w-[890px] mx-auto flex items-center justify-between text-lg text-grayish-blue flex-col xl:flex-row px-4 lg:px-0 ${classes?.tabList || ''}`} ref={tablistRef} onKeyDown={handleKeyDown}>
         {children}
       </div>
     </div>

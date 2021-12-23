@@ -2,40 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-[2em] font-medium my-2;
+  }
+  h2 {
+    @apply font-medium text-[1.5em] my-2;
+  }
+}
 @layer components {
   .none {
     display: none;
   }
 }
 @layer utilities {
-  .bg__hero-img {
-    position: relative;
-    font-size: 1rem;
-  }
   @media screen and (max-width: 1536px) {
-    .bg__hero-img {
+    .bg__color-blob--right,
+    .bg__color-blob--left {
       font-size: 0.89rem;
     }
   }
   @media screen and (max-width: 768px) {
-    .bg__hero-img {
+    .bg__color-blob--right,
+    .bg__color-blob--left {
       font-size: 0.8rem;
     }
   }
   @media screen and (max-width: 375px) {
-    .bg__hero-img {
+    .bg__color-blob--right,
+    .bg__color-blob--left {
       font-size: 0.6rem;
     }
   }
-  .bg__hero-img::before {
+  .bg__color-blob--right,
+  .bg__color-blob--left {
     content: "";
     position: absolute;
     background-color: hsl(231, 69%, 60%);
     width: 28em;
     height: 16.5em;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 2s ease;
+  }
+  .bg__color-blob--right {
     right: -7px;
-    border-radius: 8.4em 0 0 8.4em;
     bottom: 0;
+    border-radius: 8.4em 0 0 8.4em;
+    opacity: 1;
+  }
+  .bg__color-blob--left {
+    left: -1em;
+    bottom: 0;
+    border-radius: 0 8.4em 8.4em 0;
+    opacity: 1;
   }
   .tablist-item-wrapper {
     @apply w-full text-center border-b-gray-400 border-solid border-b-[1px] xl:w-auto xl:border-b-0;
