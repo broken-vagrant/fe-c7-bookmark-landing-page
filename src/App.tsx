@@ -1,13 +1,14 @@
 import './App.css';
 import BrowserCard from './components/BrowserCard';
 import Button from './components/Button';
+import Contact from './components/Contact';
 import FAQ from './components/FAQ';
 import Features from './components/Features';
 import Header from './components/Header';
 
 const DownloadOptions = () => {
   return (
-    <section className="relative text-[.9rem] sm:text-[1rem]">
+    <section className="py-8 relative text-[.9rem] sm:text-[1rem]">
       <div className="text-center w-full sm:w-3/4 lg:w-2/4 xl:1/4  mx-auto px-2 lg:px-0">
         <h2>
           Download the extension
@@ -58,6 +59,7 @@ function App() {
         <Features />
         <DownloadOptions />
         <FAQ />
+        <Contact />
       </main>
     </div>
   );

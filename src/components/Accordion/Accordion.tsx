@@ -2,6 +2,13 @@ import React, { ComponentPropsWithRef, isValidElement, ReactNode, useCallback, u
 import { isFragment } from "react-is";
 import AccordionContext from "./AccordionContext";
 
+const TransitionComponent = ({ children, expanded }: { children: ReactNode, expanded: boolean }) => {
+  return (
+    <div className={`min-h-0 h-0 overflow-hidden transition-[height] duration-300 ${expanded ? '!h-auto overflow-visible' : ''}`}>
+      {children}
+    </div>
+  )
+}
 interface AccordionProps extends ComponentPropsWithRef<'div'> {
   defaultExpanded?: boolean;
   disabled?: boolean;
@@ -40,18 +47,19 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(function Acco
     <div
       ref={ref}
       {...other}
-      className={`w-[40%] mx-auto ${classes?.root ? classes.root : ''}`}
+      className={`${expanded ? 'mb-4' : ''} ${classes?.root ? classes.root : ''}`}
     >
       <AccordionContext.Provider value={contextValue}>{summary}</AccordionContext.Provider>
-      <div
-        aria-labelledby={summary.props.id}
-        id={summary.props['aria-controls']}
-        role="region"
-        className={classes?.region ? classes.region : ''}
-        hidden={!expanded}
-      >
-        {children}
-      </div>
+      <TransitionComponent expanded={expanded}>
+        <div
+          aria-labelledby={summary.props.id}
+          id={summary.props['aria-controls']}
+          role="region"
+          className={classes?.region ? classes.region : ''}
+        >
+          {children}
+        </div>
+      </TransitionComponent>
     </div>
   )
 })

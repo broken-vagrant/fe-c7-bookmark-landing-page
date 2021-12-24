@@ -54,7 +54,7 @@ const Tabs = () => {
 }
 const Features = () => {
   return (
-    <section className="relative mt-10 text-[.9rem] sm:text-[1rem]">
+    <section className="py-4 relative mt-10 text-[.9rem] sm:text-[1rem]">
       <div className="px-2 lg:px-0 w-full sm:w-[80%] md:w-[60%] lg:w-[30%] mx-auto my-8 text-center">
         <h2 className="">
           Features

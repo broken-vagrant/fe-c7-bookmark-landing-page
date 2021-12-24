@@ -11,7 +11,7 @@ const AccordionDetails = React.forwardRef<HTMLDivElement, AccordionDetailsProps>
   return (
     <div
       ref={ref}
-      className={classes?.root ? classes.root : ''}
+      className={`px-2 ${classes?.root ? classes.root : ''}`}
       {...other}
     >
     </div>

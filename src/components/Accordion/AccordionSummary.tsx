@@ -12,7 +12,7 @@ interface AccordionSummaryProps extends ComponentPropsWithRef<'button'> {
 const AccordionSummary = React.forwardRef<HTMLButtonElement, AccordionSummaryProps>(function AccordionSummary(props, ref) {
   const { children, className, onClick, classes, ...other } = props;
 
-  const { disabled = false, disableGutters, expanded, toggle } = useContext(AccordionContext)!;
+  const { disabled = false, expanded, toggle } = useContext(AccordionContext)!;
 
   const handleChange = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (toggle) {
@@ -27,14 +27,14 @@ const AccordionSummary = React.forwardRef<HTMLButtonElement, AccordionSummaryPro
       <button
         disabled={disabled}
         aria-expanded={expanded}
-        className={`py-1 w-full ${classes?.button ? classes.button : ""}`}
+        className={`px-2 py-4 w-full border-solid border-t-[1px] border-gray-300 ${classes?.button ? classes.button : ""} hover:text-soft-red`}
         ref={ref}
         onClick={handleChange}
         {...other}
       >
         <div className={`flex justify-between items-center ${classes?.content ? classes.content : ''}`}>
           {children}
-          <span className={classes?.icon}>icon</span>
+          <span className={`w-2 h-2 pointer-events-none border-solid border-gray-400 border-r-[3px] border-b-[3px] rotate-45 transition-transform ${expanded ? '-rotate-[135deg] border-soft-red' : ''} ${classes?.icon ? classes.icon : ''}`}></span>
         </div>
       </button>
     </h3>
