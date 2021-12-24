@@ -65,7 +65,7 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     value,
     ...other
   } = props;
-  const valueToIndex = new Map();
+  // const valueToIndex = new Map();
   const tablistRef = useRef<HTMLDivElement | null>(null);
 
   let childIndex = 0;
@@ -81,7 +81,7 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
 
     }
     const childValue = child.props.value === undefined ? childIndex : child.props.value;
-    valueToIndex.set(childValue, childIndex);
+    // valueToIndex.set(childValue, childIndex);
     const selected = childValue === value;
 
     childIndex += 1;
