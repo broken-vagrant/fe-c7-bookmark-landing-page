@@ -14,6 +14,9 @@
   .none {
     display: none;
   }
+  .tap-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 @layer utilities {
   @media screen and (max-width: 1536px) {
@@ -71,5 +74,8 @@
   }
   a.footer__link:hover svg {
     @apply text-soft-red;
+  }
+  .modal__children-container {
+    @apply py-6 h-full w-full max-w-full m-0 bg-very-dark-blue bg-opacity-90;
   }
 }

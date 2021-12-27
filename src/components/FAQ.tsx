@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const FAQ = () => {
   return (
-    <section className="py-8 relative sm:text-[1rem] text-[.9rem]">
+    <section className="py-16 pb-32 relative sm:text-[1rem] text-[.9rem]">
       <div className="px-2 lg:px-0 w-full sm:w-[80%] md:w-[60%] lg:w-[30%] mx-auto my-8 text-center">
         <h2>Frequently Asked Questions</h2>
         <p className="text-grayish-blue">
