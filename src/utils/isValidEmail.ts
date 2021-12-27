@@ -6,3 +6,4 @@ const isValidEmail = (email: string) => {
   }
   return false;
 }
+export default isValidEmail;
