@@ -27,7 +27,7 @@ const AccordionSummary = React.forwardRef<HTMLButtonElement, AccordionSummaryPro
       <button
         disabled={disabled}
         aria-expanded={expanded}
-        className={`px-2 py-4 w-full border-solid border-t-[1px] border-gray-300 ${classes?.button ? classes.button : ""} hover:text-soft-red`}
+        className={`px-2 py-4 w-full border-solid border-t-[1px] border-gray-300 hover:text-soft-red outline-offset-2 ${classes?.button ? classes.button : ""}`}
         ref={ref}
         onClick={handleChange}
         {...other}

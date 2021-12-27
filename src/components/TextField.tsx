@@ -14,9 +14,10 @@ const inputLabelStyles = `block font-[inherit] p-0 text-black text-opacity-[.5] 
 
 const inputLabelActiveStyles = `translate-y-[-.4em] scale-75 text-inherit`;
 
-export const InputAdornment = React.forwardRef<HTMLDivElement, ComponentProps<'div'>>(function InputAdornment(props, ref) {
+export const InputAdornment = React.forwardRef<HTMLDivElement, ComponentProps<'div'> & { show?: boolean }>(function InputAdornment(props, ref) {
+  const { className, show, ...rest } = props
   return (
-    <div className={`inline-flex justify-center items-center px-1 font-[inherit]`} {...props} ref={ref}>
+    <div className={`inline-flex justify-center items-center px-1 font-[inherit] ${show ? 'visible' : 'invisible'} ${className ? className : ''}`} {...rest} ref={ref}>
     </div>
   )
 })
@@ -34,6 +35,7 @@ interface OwnTextFieldProps<T> {
     fieldRoot?: string
     inputRoot?: string
     input?: string
+    error?: string
   }
   tag: T;
 }
@@ -47,7 +49,7 @@ export const TextField = React.forwardRef<HTMLElement, TextFieldProps<any>>(func
 
   return (
     <div className={`${fieldRootStyles} ${fullWidth ? "w-full" : ""} ${classes ? classes.fieldRoot : ""}`}>
-      <div className={`${inputRootStyles} ${fullWidth ? 'w-full' : ''} ${classes ? classes.inputRoot : ''}]`} >
+      <div className={`${inputRootStyles} ${fullWidth ? 'w-full' : ''} ${classes ? classes.inputRoot : ''}`} >
         {
           label ? (<label className={`${inputLabelStyles} ${inputLabelActiveStyles} ${error ? 'text-red-500!' : ''}`}>{label}</label>) : null
         }
@@ -77,7 +79,7 @@ export const TextField = React.forwardRef<HTMLElement, TextFieldProps<any>>(func
       </div >
       {
         error ? (
-          <p className={`text-xs ${error ? 'text-red-500!' : ''}`}>{helperText}</p>
+          <p className={`text-xs ${error ? 'text-red-500!' : ''} ${classes.error ? classes.error : ''}`}>{helperText}</p>
         ) : null
       }
     </div>

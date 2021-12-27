@@ -12,7 +12,7 @@ const Button = ({ themeColor, className, ...otherProps }: ComponentPropsWithoutR
   const colorClasses = themeColor ? colors[themeColor] : colors['soft-blue'];
 
   return (
-    <button className={`md:px-[2em] px-[1em] py-[.5em] rounded-md text-white shadow-md hover:bg-white border-transparent border-solid border-2 ${colorClasses} ${className}`} {...otherProps}>
+    <button className={`md:px-[2em] px-[1em] py-[.5em] rounded-md text-white shadow-md hover:bg-white border-transparent border-solid border-2 outline-offset-4 transition-colors ${colorClasses} ${className ? className : ''}`} {...otherProps}>
     </button>
   )
 }

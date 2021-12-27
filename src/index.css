@@ -61,9 +61,15 @@
     @apply w-full text-center border-b-gray-400 border-solid border-b-[1px] xl:w-auto xl:border-b-0;
   }
   .tablist-item {
-    @apply relative p-4 px-6  after:content-[''] after:absolute after:inset-0 after:border-b-transparent after:border-b-4 after:border-solid hover:text-soft-red;
+    @apply relative p-4 px-6  after:content-[''] after:absolute after:inset-0 after:border-b-transparent after:border-b-4 after:border-solid hover:text-soft-red transition-colors;
   }
   .tablist-item.active {
     @apply text-very-dark-blue after:border-b-soft-red;
+  }
+  a.footer__link:hover {
+    @apply text-soft-red;
+  }
+  a.footer__link:hover svg {
+    @apply text-soft-red;
   }
 }

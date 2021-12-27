@@ -4,6 +4,7 @@ import Button from './components/Button';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
 import Features from './components/Features';
+import Footer from './components/Footer';
 import Header from './components/Header';
 
 const DownloadOptions = () => {
@@ -61,6 +62,7 @@ function App() {
         <FAQ />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 }
