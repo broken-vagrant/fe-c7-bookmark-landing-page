@@ -21,7 +21,7 @@ const ContactForm = () => {
           name="email"
           type="email"
           placeholder="Enter your email address"
-          InputProps={{ endAdornment: <InputAdornment show={hasEmailError} className="text-xl text-soft-red font-bold"><RiErrorWarningLine name="alert-circle-sharp" /></InputAdornment> }}
+          InputProps={{ endAdornment: <InputAdornment show={hasEmailError} className="text-xl text-soft-red font-bold"><RiErrorWarningLine /></InputAdornment> }}
           error={hasEmailError}
           value={emailData.email}
           helperText={emailData.error}

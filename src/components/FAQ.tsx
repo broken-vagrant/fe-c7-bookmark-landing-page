@@ -42,7 +42,7 @@ const FAQ = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion>
-          <AccordionSummary id="panel3-header" aria-controls="panel3-content">
+          <AccordionSummary id="panel4-header" aria-controls="panel4-content">
             What about other Chromium browsers?
           </AccordionSummary>
           <AccordionDetails>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import links from '../constants/headerLinks';
-import Modal from "./Modal/Modal";
+import Modal from "./Modal";
 import { IoClose } from 'react-icons/io5';
 import { FaTwitter } from "react-icons/fa";
 import { ImFacebook2 } from "react-icons/im";
@@ -36,9 +36,9 @@ const MobileNav = () => {
                 </ul>
               </div>
               <ul className="flex gap-4 justify-center text-xl">
-                <li><a href="#" aria-label="twitter link" className="footer__link">
+                <li><a href="#" aria-label="twitter link" className="link">
                   <FaTwitter /></a></li>
-                <li><a href="#" aria-label="facebook link" className="footer__link"><ImFacebook2 /></a></li>
+                <li><a href="#" aria-label="facebook link" className="link"><ImFacebook2 /></a></li>
               </ul>
             </div>
           </Modal>

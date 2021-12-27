@@ -32,10 +32,10 @@ const AccordionSummary = React.forwardRef<HTMLButtonElement, AccordionSummaryPro
         onClick={handleChange}
         {...other}
       >
-        <div className={`flex justify-between items-center ${classes?.content ? classes.content : ''}`}>
+        <span className={`flex justify-between items-center ${classes?.content ? classes.content : ''}`}>
           {children}
           <span className={`w-2 h-2 pointer-events-none border-solid border-gray-400 border-r-[3px] border-b-[3px] rotate-45 transition-transform ${expanded ? '-rotate-[135deg] border-soft-red' : ''} ${classes?.icon ? classes.icon : ''}`}></span>
-        </div>
+        </span>
       </button>
     </h3>
   )

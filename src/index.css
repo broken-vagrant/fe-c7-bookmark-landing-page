@@ -69,10 +69,10 @@
   .tablist-item.active {
     @apply text-very-dark-blue after:border-b-soft-red;
   }
-  a.footer__link:hover {
+  a.link:hover {
     @apply text-soft-red;
   }
-  a.footer__link:hover svg {
+  a.link:hover svg {
     @apply text-soft-red;
   }
   .modal__children-container {

@@ -1,7 +1,6 @@
 {
   "name": "fec-bookmark-landing-page",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "homepage": "https://zkindest.github.io/fe-c7-bookmark-landing-page",
   "scripts": {
