@@ -38,7 +38,7 @@ function App() {
       <Header />
       <main>
         <section className="relative flex flex-col lg:flex-row-reverse text-[.9rem] sm:text-[1rem]">
-          <div className="relative pointer-events-none basis-[60%]">
+          <div className="relative pointer-events-none basis-[60%] select-none">
             <div className="relative lg:mr-20 mr-0 mt-10">
               <img src="./images/illustration-hero.svg" alt="hero" className="w-full h-full object-contain"></img>
             </div>

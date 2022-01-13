@@ -17,6 +17,33 @@
   .tap-transparent {
     -webkit-tap-highlight-color: transparent;
   }
+  .collapsible-wrapper {
+    overflow: hidden;
+  }
+  .collapsible-wrapper:after {
+    content: '';
+    height: 50px;
+    transition: height .3s linear,max-height 0s .3s linear;
+    max-height: 0px;
+  }
+  .collapsible {
+    transition: margin-bottom 0.3s cubic-bezier(0, 0, 0, 1);
+    margin-bottom: 0;
+    max-height: 100000px;
+
+  }
+  .collapsible-wrapper.collapsed > .collapsible {
+    margin-bottom: -2000px;
+    transition: margin-bottom 0.3s cubic-bezier(1, 0, 1, 1),
+              visibility 0s 0.3s, max-height 0s 0.3s;
+    visibility: hidden;
+    max-height: 0;
+  }
+  .collapsible-wrapper.collapsed:after {
+    height: 0;
+    transition: height 0.3s linear;
+    max-height: 50px;
+  }
 }
 @layer utilities {
   @media screen and (max-width: 1536px) {

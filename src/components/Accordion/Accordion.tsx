@@ -4,8 +4,10 @@ import AccordionContext from "./AccordionContext";
 
 const TransitionComponent = ({ children, expanded }: { children: ReactNode, expanded: boolean }) => {
   return (
-    <div className={`min-h-0 h-0 overflow-hidden transition-[height] duration-300 ${expanded ? '!h-auto overflow-visible' : ''}`}>
-      {children}
+    <div className={`collapsible-wrapper ${expanded ? '' : 'collapsed'}`}>
+      <div className="collapsible">
+        {children}
+      </div>
     </div>
   )
 }
@@ -47,7 +49,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(function Acco
     <div
       ref={ref}
       {...other}
-      className={`${expanded ? 'mb-4' : ''} ${classes?.root ? classes.root : ''}`}
+      className={` ${classes?.root ? classes.root : ''}`}
     >
       <AccordionContext.Provider value={contextValue}>{summary}</AccordionContext.Provider>
       <TransitionComponent expanded={expanded}>
@@ -55,7 +57,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(function Acco
           aria-labelledby={summary.props.id}
           id={summary.props['aria-controls']}
           role="region"
-          className={classes?.region ? classes.region : ''}
+          className={`${expanded ? 'mb-4' : ''} ${classes?.region ? classes.region : ''}`}
         >
           {children}
         </div>

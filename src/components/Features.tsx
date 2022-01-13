@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import { Tab, TabContext, TabList, TabPanel } from "./Tabs";
 
@@ -8,16 +8,26 @@ interface FeatureDetailProps {
   imagePath: string
 }
 const FeatureDetail = ({ title, description, imagePath }: FeatureDetailProps) => {
+  const [showFigure, setShowFigure] = useState(false);
+  const [showText, setShowText] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowFigure(true);
+    }, 200)
+    setTimeout(() => {
+      setShowText(true);
+    }, 300)
+  }, [])
   return (
     <article className="relative flex  gap-8 flex-col xl:flex-row py-[4rem] min-h-[70vh]">
-      <div className="relative pointer-events-none text-[1rem] basis-[50%]">
-        <div className="relative ml-10 sm:ml-20 md:w-[20rem] lg:w-[34rem] mb-[4rem]">
+      <div className={`relative pointer-events-none text-[1rem] basis-[50%] select-none opacity-0 transition-opacity ${showFigure ? "opacity-100" : ""}`}>
+        <div className="relative ml-10 sm:ml-20 md:w-[20rem] lg:w-[34rem] mb-[4rem] ">
           <img src={imagePath} alt="illustration of bookmarking" className="w-full h-full object-contain"></img>
         </div>
-        <div className="bg__color-blob--left">
+        <div className="bg__color-blob--left ">
         </div>
       </div>
-      <div className="w-full sm:w-3/4 lg:w-1/4 self-center text-center xl:text-left px-2 lg:px-0">
+      <div className={`w-full sm:w-3/4 lg:w-1/4 self-center text-center xl:text-left px-2 lg:px-0 opacity-0 transition-opacity ${showText ? "opacity-100" : ""}`}>
         <h2>{title}</h2>
         <p className="text-grayish-blue my-4">
           {description}
