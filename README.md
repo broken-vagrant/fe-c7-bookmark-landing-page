@@ -40,4 +40,3 @@ Users should be able to:
 ## Author
 
 - Website - [Afroz's web home](https://zkindest.github.io/)
-- Twitter - [@zkindest](https://twitter.com/zkindest)
